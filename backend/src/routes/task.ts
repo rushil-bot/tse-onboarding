@@ -18,6 +18,7 @@ router.get("/:id", TaskController.getTask);
  * request should be sent through or an error should be thrown.
  */
 router.post("/", TaskValidator.createTask, TaskController.createTask);
+router.put("/:id", TaskValidator.updateTask, TaskController.updateTask);
 router.delete("/:id", TaskController.removeTask);
 
 export default router;
