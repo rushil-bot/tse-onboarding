@@ -1,0 +1,38 @@
+.item {
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+.textContainer {
+  height: 100%;
+  border-bottom: 1px solid var(--color-text-secondary);
+  flex-grow: 1; /* Takes up all remaining space in the parent div */
+  display: flex;
+  flex-direction: column; /* Lays out children vertically */
+  justify-content: center; /* Centers children vertically (main axis) */
+  align-items: stretch; /* Stretches children horizontally (cross axis) */
+  overflow: hidden;
+}
+
+.textContainer span {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title {
+  font: var(--font-label);
+}
+
+.description {
+  font: var(--font-body);
+}
+
+.checked {
+  color: var(--color-text-secondary);
+}
