@@ -4,7 +4,7 @@ import { createTask, updateTask } from "src/api/tasks";
 import { TaskForm } from "src/components/TaskForm";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import type { CreateTaskRequest, Task, UpdateTaskRequest } from "src/api/tasks";
+import type { CreateTaskRequest, UpdateTaskRequest, Task } from "src/api/tasks";
 import type { TaskFormProps } from "src/components/TaskForm";
 
 const TITLE_INPUT_ID = "task-title-input";
@@ -67,6 +67,7 @@ describe("taskForm", () => {
       description: "Updated description",
       isChecked: mockTask.isChecked,
       assignee: "",
+      dateCreated: mockTask.dateCreated, // <--- This line fixes the error
     });
     await waitFor(() => {
       expect(saveButton).toBeEnabled();
