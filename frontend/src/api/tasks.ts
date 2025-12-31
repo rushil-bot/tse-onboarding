@@ -103,7 +103,6 @@ export async function getTask(id: string): Promise<APIResult<Task>> {
 
 export async function getAllTasks(): Promise<APIResult<Task[]>> {
   try {
-    // your code here
     const response = await get(`/api/tasks`);
 
     const json = (await response.json()) as TaskJSON[];

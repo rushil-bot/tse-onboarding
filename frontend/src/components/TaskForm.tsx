@@ -71,7 +71,6 @@ export function TaskForm({ mode, task, onSubmit }: TaskFormProps) {
     <form className={styles.form}>
       <span className={styles.formTitle}>{formTitle}</span>
 
-      {/* Row 1: Title & Description - Matches PDF Page 6 Top Row */}
       <div className={styles.formRow}>
         <TextField
           className={styles.textField}
@@ -90,7 +89,6 @@ export function TaskForm({ mode, task, onSubmit }: TaskFormProps) {
         />
       </div>
 
-      {/* Row 2: Assignee & Save - Matches PDF Page 6 Bottom Row */}
       <div className={styles.formRow}>
         <TextField
           className={styles.textField}

@@ -59,7 +59,6 @@ export async function getUser(id: string): Promise<APIResult<User>> {
 
 export async function getAllTasks(): Promise<APIResult<User[]>> {
   try {
-    // your code here
     const response = await get(`/api/user`);
 
     const json = (await response.json()) as User[];

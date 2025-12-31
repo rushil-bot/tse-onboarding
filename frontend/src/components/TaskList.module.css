@@ -7,27 +7,25 @@
   font: var(--font-heading);
   font-size: 1.5rem;
   display: block;
-  margin-bottom: 1rem; /* Added for spacing between title and list */
+  margin-bottom: 1rem;
 }
 
-/* 3. Inner Item Container: Flexbox, column, stretched horizontally */
 .itemContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 0.5rem; /* Optional: adds nice spacing between tasks */
+  gap: 0.5rem;
   overflow: hidden;
 }
 
 .userTagContainer {
-  width: 12rem; /* Fixed width as suggested in walkthrough */
+  width: 12rem;
   flex-shrink: 0;
   display: flex;
-  justify-content: flex-end; /* Align the tag to the right within this container */
+  justify-content: flex-end;
 }
 
-/* Ensure .item stays consistent */
 .item {
   height: 3rem;
   display: flex;
@@ -39,7 +37,6 @@
   transition: background-color 0.2s;
 }
 
-/* 4. Error Modal Text: Blue color override */
 .errorModalText {
   color: var(--color-tse-navy-blue);
 }

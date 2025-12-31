@@ -25,14 +25,14 @@ type CreateTaskBody = {
   title: string;
   description?: string;
   isChecked?: boolean;
-  assignee?: string; // Added assignee
+  assignee?: string;
 };
 
 type UpdateTaskBody = {
   title: string;
   description?: string;
   isChecked?: boolean;
-  assignee?: string; // Added assignee
+  assignee?: string;
 };
 
 export const createTask: RequestHandler = async (req, res, next) => {

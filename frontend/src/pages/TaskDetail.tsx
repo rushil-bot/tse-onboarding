@@ -44,7 +44,6 @@ export function TaskDetail() {
     );
   }
 
-  // Matches PDF Page 6 logic: Show form when editing
   if (isEditing) {
     return (
       <Page>

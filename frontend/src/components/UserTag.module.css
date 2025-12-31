@@ -20,7 +20,6 @@
 
 .assingeeItem {
   height: 2rem;
-  /* Removed margin-top: 2rem; <-- This was causing the misalignment */
   display: flex;
   flex-direction: row;
   align-items: center;

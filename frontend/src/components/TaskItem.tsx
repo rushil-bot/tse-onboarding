@@ -36,7 +36,6 @@ export function TaskItem({ task: initialTask }: TaskItemProps) {
   return (
     <div className={styles.item}>
       <CheckButton checked={task.isChecked} onPress={handleToggleCheck} disabled={isLoading} />
-      {/* Wrapper to extend the border across both text and user tag */}
       <div className={styles.contentContainer}>
         <div className={textContainer}>
           <span className={styles.title}>

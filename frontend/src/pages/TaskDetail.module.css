@@ -4,7 +4,6 @@
 
 .taskTitle {
   font: var(--font-heading);
-  /* justify-content is for flex containers, usually not needed on the span itself unless it is flex */
 }
 
 .item {
@@ -22,81 +21,68 @@
 
 .description {
   font: var(--font-body);
-  /* margin-top: -1rem;  <-- Careful with negative margins, they can cause overlap. 
-     If you want less space, adjust the margin-top of the parent container (.item) instead. */
   word-break: break-all;
   white-space: normal;
 }
 
 .textContainer span {
-  /* This might conflict with long user names if you want them to wrap. 
-     If you want ellipsis (...) keep this, otherwise remove for full text. */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Renamed from .assingeeTask to .assingeeLabel for clarity */
 .assingeeLabel {
   font: var(--font-label);
-  margin-right: 1rem; /* Adjust this to control space between "Assignee" and the Icon */
+  margin-right: 1rem;
 }
 
 .assingeeName {
   font: var(--font-body);
-  /* Ensure the name truncates if it's too long */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .assingeeIcon {
-  /* Removed margin-left: 2rem */
-  width: 32px; /* Set width/height in CSS is often safer */
+  width: 32px;
   height: 32px;
-  margin-right: 0.5rem; /* Small space between icon and name */
-  flex-shrink: 0; /* Prevents icon from squishing if name is long */
+  margin-right: 0.5rem;
+  flex-shrink: 0;
 }
 
 .assingeeItem {
   height: 2rem;
   margin-top: 2rem;
-  display: flex; /* Fixes alignment issues */
+  display: flex;
   flex-direction: row;
-  align-items: center; /* Vertically centers the text and icon */
-  justify-content: flex-start; /* Aligns everything to the left */
-  /* column-gap can also be used here instead of margins on children */
-  /* column-gap: 0.5rem; */
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .statusItem {
   height: 2rem;
   margin-top: 1rem;
-  display: flex; /* Fixes alignment issues */
+  display: flex;
   flex-direction: row;
-  align-items: center; /* Vertically centers the text and icon */
-  justify-content: flex-start; /* Aligns everything to the left */
-  /* column-gap can also be used here instead of margins on children */
-  /* column-gap: 0.5rem; */
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .statusLabel {
   font: var(--font-label);
-  margin-right: 1rem; /* Adjust this to control space between "Assignee" and the Icon */
+  margin-right: 1rem;
 }
 
 .dateItem {
   height: 2rem;
   margin-top: 1rem;
-  display: flex; /* Fixes alignment issues */
+  display: flex;
   flex-direction: row;
-  align-items: center; /* Vertically centers the text and icon */
-  justify-content: flex-start; /* Aligns everything to the left */
-  /* column-gap can also be used here instead of margins on children */
-  /* column-gap: 0.5rem; */
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .dateLabel {
   font: var(--font-label);
-  margin-right: 1rem; /* Adjust this to control space between "Assignee" and the Icon */
+  margin-right: 1rem;
 }

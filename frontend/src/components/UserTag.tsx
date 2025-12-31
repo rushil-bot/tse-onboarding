@@ -8,7 +8,6 @@ export type UserTagProps = {
 
 export function UserTag({ user }: UserTagProps) {
   if (!user) {
-    // Verified against PDF Page 1 : Lowercase 'a'
     return <span className={styles.noUserMessage}>Not assigned</span>;
   }
   let profilePicUrl = "/userIcon.svg";
