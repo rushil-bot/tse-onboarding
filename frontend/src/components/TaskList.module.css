@@ -7,20 +7,36 @@
   font: var(--font-heading);
   font-size: 1.5rem;
   display: block;
-  margin-bottom: 1rem; /* Added for spacing between title and list */
+  margin-bottom: 1rem;
 }
 
-/* 3. Inner Item Container: Flexbox, column, stretched horizontally */
 .itemContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 0.5rem; /* Optional: adds nice spacing between tasks */
+  gap: 0.5rem;
   overflow: hidden;
 }
 
-/* 4. Error Modal Text: Blue color override */
+.userTagContainer {
+  width: 12rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.item {
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 0.25rem;
+  padding: 0 0.5rem;
+  transition: background-color 0.2s;
+}
+
 .errorModalText {
   color: var(--color-tse-navy-blue);
 }

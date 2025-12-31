@@ -44,7 +44,6 @@ export function TaskList({ title }: TaskListProps) {
         styleVersion="styled"
         variant="error"
         title="An error occurred"
-        // Override the text color so it doesn't show white text on a white background
         content={<p className={styles.errorModalText}>{errorModalMessage}</p>}
         isOpen={errorModalMessage !== null}
         onClose={() => setErrorModalMessage(null)}

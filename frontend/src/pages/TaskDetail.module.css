@@ -1,0 +1,88 @@
+.errorModalText {
+  color: var(--color-tse-navy-blue);
+}
+
+.taskTitle {
+  font: var(--font-heading);
+}
+
+.item {
+  height: 3rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+.taskButton {
+  margin-left: auto;
+}
+
+.description {
+  font: var(--font-body);
+  word-break: break-all;
+  white-space: normal;
+}
+
+.textContainer span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.assingeeLabel {
+  font: var(--font-label);
+  margin-right: 1rem;
+}
+
+.assingeeName {
+  font: var(--font-body);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.assingeeIcon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.assingeeItem {
+  height: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.statusItem {
+  height: 2rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.statusLabel {
+  font: var(--font-label);
+  margin-right: 1rem;
+}
+
+.dateItem {
+  height: 2rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.dateLabel {
+  font: var(--font-label);
+  margin-right: 1rem;
+}
