@@ -2,7 +2,7 @@ import { Dialog } from "@tritonse/tse-constellation";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { type Task, updateTask } from "src/api/tasks";
-import { CheckButton } from "src/components";
+import { CheckButton, UserTag } from "src/components";
 import styles from "src/components/TaskItem.module.css";
 
 export type TaskItemProps = {
@@ -35,23 +35,23 @@ export function TaskItem({ task: initialTask }: TaskItemProps) {
   }
   return (
     <div className={styles.item}>
-      {/* render CheckButton here */}
-      <CheckButton
-        checked={task.isChecked}
-        onPress={() => handleToggleCheck()}
-        disabled={isLoading}
-      />
-      <div className={textContainer}>
-        <span className={styles.title}>
-          <Link to={`/task/${task._id}`}>{task.title}</Link>
-        </span>
-        {task.description && <span className={styles.description}>{task.description}</span>}
+      <CheckButton checked={task.isChecked} onPress={handleToggleCheck} disabled={isLoading} />
+      {/* Wrapper to extend the border across both text and user tag */}
+      <div className={styles.contentContainer}>
+        <div className={textContainer}>
+          <span className={styles.title}>
+            <Link to={`/task/${task._id}`}>{task.title}</Link>
+          </span>
+          {task.description && <span className={styles.description}>{task.description}</span>}
+        </div>
+        <div className={styles.userTagContainer}>
+          <UserTag user={task.assignee} />
+        </div>
       </div>
       <Dialog
         styleVersion="styled"
         variant="error"
         title="An error occurred"
-        // Override the text color so it doesn't show white text on a white background
         content={<p className={styles.errorModalText}>{errorModalMessage}</p>}
         isOpen={errorModalMessage !== null}
         onClose={() => setErrorModalMessage(null)}

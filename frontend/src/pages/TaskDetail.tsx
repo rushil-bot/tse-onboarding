@@ -2,10 +2,9 @@ import { Dialog } from "@tritonse/tse-constellation";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getTask, type Task } from "src/api/tasks";
-import { Button, Page } from "src/components";
+import { Button, Page, TaskForm, UserTag } from "src/components";
 import styles from "src/pages/TaskDetail.module.css";
 
-// Define the date formatter outside the component to avoid recreating it on every render
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   dateStyle: "full",
   timeStyle: "short",
@@ -14,9 +13,9 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 export function TaskDetail() {
   const [task, setTask] = useState<Task | null>(null);
   const [errorModalMessage, setErrorModalMessage] = useState<string | null>(null);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
   const { id } = useParams();
 
-  // 1. Fetch the task data
   useEffect(() => {
     if (id) {
       getTask(id)
@@ -31,7 +30,6 @@ export function TaskDetail() {
     }
   }, [id]);
 
-  // 2. Update the document title dynamically when the task loads
   useEffect(() => {
     if (task) {
       document.title = `${task.title} | TSE Todos`;
@@ -46,51 +44,61 @@ export function TaskDetail() {
     );
   }
 
+  // Matches PDF Page 6 logic: Show form when editing
+  if (isEditing) {
+    return (
+      <Page>
+        <TaskForm
+          mode="edit"
+          task={task}
+          onSubmit={(updatedTask) => {
+            setTask(updatedTask);
+            setIsEditing(false);
+          }}
+        />
+      </Page>
+    );
+  }
+
   return (
     <Page>
-      {/* Link to home*/}
       <p>
         <Link to="/">Back to home</Link>
       </p>
 
       <div className={styles.textContainer}>
+        {/* Title Row Matches PDF Page 5 */}
         <div className={styles.item}>
-          {/*Title of task */}
           <span className={styles.taskTitle}>{task.title}</span>
-
-          {/*Edit button*/}
           <div className={styles.taskButton}>
-            <Button kind="primary" data-testid="task-edit-button" label="Edit" />
+            <Button
+              kind="primary"
+              data-testid="task-edit-button"
+              label="Edit"
+              onClick={() => setIsEditing(true)}
+            />
           </div>
         </div>
 
         <div className={styles.item}>
-          {/*Description*/}
           <p className={styles.description}>
             {task.description ? task.description : "(No Description)"}
           </p>
         </div>
 
-        {/*Assignee information */}
         <div className={styles.assingeeItem}>
           <span className={styles.assingeeLabel}>Assignee</span>
-          <img src="/userIcon.svg" alt="User Icon" className={styles.assingeeIcon} />
-          <span className={styles.assingeeName}>
-            User Name Very Long Very Long Very Long Very Long...
-          </span>
+          <UserTag user={task.assignee} />
         </div>
 
-        {/*Status Information */}
         <div className={styles.statusItem}>
           <span className={styles.statusLabel}>Status</span>
           <span>{task.isChecked ? "Done" : "Not Done"}</span>
         </div>
 
-        {/*Date Created Information */}
         <div className={styles.dateItem}>
           <span className={styles.dateLabel}>Date Created</span>
-          {/* Use the formatter on the task.dateCreated object */}
-          <span>{dateFormatter.format(task.dateCreated)}</span>
+          <span>{dateFormatter.format(new Date(task.dateCreated))}</span>
         </div>
       </div>
 

@@ -52,8 +52,8 @@
 
 .assingeeIcon {
   /* Removed margin-left: 2rem */
-  width: 28px; /* Set width/height in CSS is often safer */
-  height: 28px;
+  width: 32px; /* Set width/height in CSS is often safer */
+  height: 32px;
   margin-right: 0.5rem; /* Small space between icon and name */
   flex-shrink: 0; /* Prevents icon from squishing if name is long */
 }

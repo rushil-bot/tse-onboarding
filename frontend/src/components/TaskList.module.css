@@ -20,6 +20,25 @@
   overflow: hidden;
 }
 
+.userTagContainer {
+  width: 12rem; /* Fixed width as suggested in walkthrough */
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* Align the tag to the right within this container */
+}
+
+/* Ensure .item stays consistent */
+.item {
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 0.25rem;
+  padding: 0 0.5rem;
+  transition: background-color 0.2s;
+}
+
 /* 4. Error Modal Text: Blue color override */
 .errorModalText {
   color: var(--color-tse-navy-blue);
